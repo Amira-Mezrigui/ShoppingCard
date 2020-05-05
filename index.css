@@ -1,0 +1,58 @@
+body
+{
+    background-color:#066BA3;
+    background-size: cover;
+    background-position: center;
+    margin: 50px 0 ;
+}
+h1, header p, .card-title{
+    font-size: 35px;
+    color:#066BA3;
+}
+.card{
+    background-color: #efece2;
+  
+}
+.formulaire
+{
+    background-color: #efece2;
+    margin: auto;
+    
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.formulaire:hover
+{
+    box-shadow: 20px 20px 50px 20px rgb(24, 21, 21);
+}
+.boutton
+
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.case
+{
+    background-color: #efece2;
+    border-bottom: solid black 1px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    height: 30px;
+    
+}
+
+.label
+{
+    display: flex;
+    justify-content: flex-start;
+}
+ 
+footer p
+{ 
+  opacity: 0.5;
+}

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My shopping cart</title>
+    <!-- ion icons style-->
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <!---->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="shopping.css">
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+</head>
+<body>
+    <!-- nav-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #066BA3;" role="navigation">
+      <div class="container">
+        <div class="cart ">
+          <a href="" >
+          <ion-icon name="cart" size="large" > </ion-icon><span>0</span>
+          </a>
+      </div>
+          
+          <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+              &#9776;
+          </button>
+          <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+              <ul class="nav navbar-nav">
+                  <li class="nav-item"><a href="#" class="nav-link">Accueil</a></li>
+                  <li class="nav-item"><a href="#mes-produit" class="nav-link">Nos produits</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link">Nos points de vente</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link">More</a></li>
+              </ul>
+              <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                  <li class="nav-item order-2 order-md-1"> <a href="index.html" target="_blank" class="nav-link"> Sign up</a> </li>
+                  <li class="dropdown order-1">
+                      <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle">Login <span class="caret"></span></button>
+                      <ul class="dropdown-menu dropdown-menu-right mt-2">
+                         <li class="px-3 py-2">
+                             <form class="form" role="form">
+                                  <div class="form-group">
+                                      <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="text" required="">
+                                  </div>
+                                  <div class="form-group">
+                                      <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="text" required="">
+                                  </div>
+                                  <div class="form-group">
+                                      <button type="submit" class="btn btn-primary btn-block">Login</button>
+                                  </div>
+                                  <div class="form-group text-center">
+                                      <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
+                                  </div>
+                              </form>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  
+  <div id="modalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h3>Forgot password</h3>
+                  <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
+              </div>
+              <div class="modal-body">
+                  <p>Reset your password..</p>
+              </div>
+              <div class="modal-footer">
+                  <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                  <button class="btn btn-primary">Save changes</button>
+              </div>
+          </div>
+      </div>
+  </div>
+    <!-- presentation du site-->
+    
+    <br>
+    <br>
+    <br>
+    <div class="total position-fixed">
+    <p> Total <span>0</span></p>
+    </div>
+   
+    <header class="container product">
+	
+        <div class="product-info">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="product-image">
+                                <img src="images/visage.jpeg" alt="image" />
+                            </div>			
+                        </div>
+                    </div>	
+                </div>
+                <div class="col-md-6">
+                    <div class="product-content">
+                        <h1>Bonjour ! Prenez soin de votre peau mes chéres </h1>
+                        <p>  Laboratoire "Amira" vous accompagne avec ses produits <strong> dermatologique </strong> <strong> non acnégène </strong> <strong> non-comédogène </strong> 
+                        </p>
+                    </div>
+                </div>
+            </div>	
+        </div>
+    </header>
+    <!--presentation du site-->
+
+    <!--Nos offres-->
+    <div class="bg-primary">
+      <div class="container">
+          <!-- Row -->
+          <div class="row counter-box text-center">
+              <!-- column  -->
+              <div class="col-lg-3 col-6 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
+                  <div class="">
+                      <h2 class="font-medium text-white m-b-0"> Nous offrons</h2>
+                      <h3 class="text-white font-14 op-7"></h3>
+                  </div>
+              </div>
+              <!-- column  -->
+              <!-- column  -->
+              <div class="col-lg-3 col-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
+                  <div class="">
+                      
+                      <h3 class="text-white font-14 op-7"> 2 doses d'essai aux choix sur toute commande </h3>
+                  </div>
+              </div>
+              <!-- column  -->
+              <!-- column  -->
+              <div class="col-lg-3 col-6 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1200">
+                  <div class="">
+                      
+                      <h3 class="text-white font-14 op-7">une livraison gratuite <br> dés 100dt d'achats</h3>
+                  </div>
+              </div>
+              <!-- column  -->
+              <!-- column  -->
+              <div class="col-lg-3 col-6 aos-init aos-animate" data-aos="fade-left" data-aos-duration="1200">
+                  <div class="">
+                      
+                      <h3 class="text-white font-14 op-7">Possibilité de paiement á la livraison</h3>
+                  </div>
+              </div>
+              <!-- column  -->
+          </div>
+      </div>
+  </div>
+    <!-- Fin nos offres-->
+
+
+    <!-- les articles -->
+    <!-- pour peau seche -->
+    <div class="container" id="mes-produit">
+        <h2> Votre routine peau seche </h2>
+        <div class="product-list">
+            <div class="row">
+              <div class="col-md-3 col-sm-6">
+                <div class="white-box">
+                  <div class="product-img">
+                    <img src="https://image.doctipharma.fr/c/2510769/p/28678_1-z/la-roche-posay-anthelios-ultra-bb-creme-teintee-spf50-plus-50-ml.jpg">
+                  </div>
+                  <div class="product-bottom">
+                    <div class="product-name"> Ecran solaire pour peau séche </div>
+                    <div class="price">
+                      <span class="rupee-icon">₹</span> 32,000 
+                    </div>
+                    <a href="#" class="blue-btn">Ajouter au panier </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="white-box">
+                  <div class="product-img">
+                    <img src="https://www.vitalya.fr/images/2013/RochePosay-Nutritic-intense-50ml.jpg">
+                  </div>
+                  <div class="product-bottom">
+                    <div class="product-name"> créme hydratante peau séche</div>
+                    <div class="price">
+                      <span class="rupee-icon">₹</span> 30,000 
+                    </div>
+                    <a href="#" class="blue-btn">Ajouter au panier</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="white-box">
+                  <div class="product-img">
+                    <img src="https://pharmasimple.com/608084-large_default/la-roche-posay-lipikar-gel-lavant-750ml.jpg">
+                  </div>
+                  <div class="product-bottom">
+                    <div class="product-name"> Gel nettoyant peau séche</div>
+                    <div class="price">
+                      <span class="rupee-icon">₹</span> 45,000 
+              
+                    </div>
+                    <a href="#" class="blue-btn">Ajouter au panier</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="white-box">
+                  <div class="product-img">
+                    <img src="https://www.parapharmacie-naocia.com/boutique/images_produits/11591-redermic-c-peau-seche-z.jpg">
+                  </div>
+                  <div class="product-bottom">
+                    <div class="product-name"> soin du jour peau séche</div>
+                    <div class="price">
+                      <span class="rupee-icon">₹</span> 50,000 
+                    </div>
+                    <a href="#" class="blue-btn">Ajouter au panier</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!-- pour peau mixte a tendances acneiques  -->
+    <div class="container">
+        <h2> Votre routine peau mixte </h2>
+        <div class="product-list">
+            <div class="row">
+              <div class="col-md-3 col-sm-6">
+                <div class="white-box">
+                  <div class="product-img">
+                    <img src="https://www.laroche-posay.fr/anthelios/anthelios-anti-imperfections-gel-creme-spf50/mpr-NmxFWTlmbGlkODQ3U1U3QXQ4R2ROdz09-f-0.jpg?v=20190307110028">
+                  </div>
+                  <div class="product-bottom">
+                    <div class="product-name"> Ecran solaire minéral peau mixte</div>
+                    <div class="price">
+                      <span class="rupee-icon">₹</span> 32,000 
+                    </div>
+                    <a href="#" class="blue-btn">Ajouter au panier</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="white-box">
+                  <div class="product-img">
+                    <img src="https://img.newpharma.net/images/products/fr/500/la-roche-posay-effaclar-mat-soin-hydratant-sebo-regulateur-visage-peaux-grasses-tube-40ml.2000.jpg">
+                  </div>
+                  <div class="product-bottom">
+                    <div class="product-name">créme hydratante peau  mixte</div>
+                    <div class="price">
+                      <span class="rupee-icon">₹</span> 30,000 
+                    </div>
+                    <a href="#" class="blue-btn">Ajouter au panier</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="white-box">
+                  <div class="product-img">
+                    <img src="https://www.my-para-pharmacie.com/76-thickbox_default/la-roche-posay-effaclar-gel-moussant-purifiant-peaux-grasses-et-sensibles-200ml.jpg">
+                  </div>
+                  <div class="product-bottom">
+                    <div class="product-name"> Gel moussant purifiant peaux mixte</div>
+                    <div class="price">
+                      <span class="rupee-icon">₹</span> 45,000 
+                      
+                    </div>
+                    <a href="#" class="blue-btn">Ajouter au panier</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="white-box">
+                  <div class="product-img">
+                    <img src="https://assets.feelunique.com/f_auto,t_product_main/v1/live/product/main-image/85282/ksby4ub1vaempqqnjw6q.jpg">
+                  </div>
+                  <div class="product-bottom">
+                    <div class="product-name">Soin du jour peaux mixtes</div>
+                    <div class="price">
+                      <span class="rupee-icon">₹</span> 50,000 
+                      
+                    </div>
+                    <a href="#" class="blue-btn">Ajouter au panier</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+     <!--Footer-->
+		<div class="bottom section-padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="copyright">
+							<p>© 2020 - Laboratoire Amira a votre service 216-00 000 000- </p>
+            </div>
+          </div>
+        </div>
+			</div>
+		</div>
+    <!--Footer-->
+    <!-- pour peau grasse 
+    <div class="container">
+        <h2> Votre routine peau grasse </h2>
+        <div class="product-list">
+            <div class="row">
+              <div class="col-md-3 col-sm-6">
+                <div class="white-box">
+                  <div class="product-img">
+                    <img src="https://www.91-img.com/pictures/laptops/asus/asus-x552cl-sx019d-core-i3-3rd-gen-4-gb-500-gb-dos-1-gb-61721-large-1.jpg">
+                  </div>
+                  <div class="product-bottom">
+                    <div class="product-name">Asus X552CL-SX019D Laptop</div>
+                    <div class="price">
+                      <span class="rupee-icon">₹</span> 32,000 
+                    </div>
+                    <a href="#" class="blue-btn">Add to cart</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="white-box">
+                  <div class="product-img">
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/81nreGN5qQL._SL1500_.jpg">
+                  </div>
+                  <div class="product-bottom">
+                    <div class="product-name">ASUS X507 Core i5 - 8th Gen 15.6"</div>
+                    <div class="price">
+                      <span class="rupee-icon">₹</span> 30,000 
+                    </div>
+                    <a href="#" class="blue-btn">Add to cart</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="white-box">
+                  <div class="product-img">
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/81RrcHvDGbL._SY355_.jpg">
+                  </div>
+                  <div class="product-bottom">
+                    <div class="product-name">ASUS VivoBook S400CA</div>
+                    <div class="price">
+                      <span class="rupee-icon">₹</span> 45,000 
+                      <span class="line-through"><span class="rupee-icon">₹</span> 50,000</span>
+                    </div>
+                    <a href="#" class="blue-btn">Add to cart</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="white-box">
+                  <div class="product-img">
+                    <img src="https://cdn.mos.cms.futurecdn.net/kwP2nL8FAVboognXmW6nvP-320-80.jpg">
+                  </div>
+                  <div class="product-bottom">
+                    <div class="product-name">Asus laptops</div>
+                    <div class="price">
+                      <span class="rupee-icon">₹</span> 50,000 
+                      <span class="line-through"><span class="rupee-icon">₹</span>  60,000</span>
+                    </div>
+                    <a href="#" class="blue-btn">Add to cart</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div> -->
+
+    <!--les articles -->
+    <!-- a essayer-->
+ 
+
+    <!-- script for ion icons -->
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <!-- script for my document js-->
+    <script src="shopping.js"> </script>
+
+</body>
+</html>
